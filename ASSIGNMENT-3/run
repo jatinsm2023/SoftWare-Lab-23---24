@@ -1,0 +1,10 @@
+rm *.o
+g++ -c DataVector.cpp 
+g++ -c VectorDataset.cpp
+ar rcs libvector.a DataVector.o VectorDataset.o
+g++ nearestkpoints.cpp -L. -lvector
+g++ nearestkpoints.cpp -DUSERMODE -L. -lvector
+./a.exe
+
+
+rm *.o;rm *.a;rm *.exe
